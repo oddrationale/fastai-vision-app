@@ -1,0 +1,5 @@
+--find-links https://download.pytorch.org/whl/torch_stable.html
+azure-functions
+torch==1.4.0+cpu
+torchvision==0.5.0+cpu
+fastai==1.0.60

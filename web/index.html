@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FastAI Vision App</title>
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="styles/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="center">
+    <div class="title">Classify Bear Images 🐻</div>
+    <p>
+      Use images of
+      <strong>teddy</strong> bears,
+      <strong>black</strong> bears,
+      <strong>grizzly</strong> bears, or all three!
+    </p>
+    <div class="content">
+      <div class="no-display">
+        <input
+          accept="image/*"
+          class="no-display"
+          id="file-input"
+          name="file"
+          type="file"
+        />
+      </div>
+      <button
+        class="choose-file-button"
+        id="select-button"
+        type="button"
+      >Select Image</button>
+      <div class="upload-label">
+        <label id="upload-label">No file chosen</label>
+      </div>
+      <div id="image-picked"></div>
+      <div class="analyze">
+        <button class="analyze-button" id="analyze-button" type="button">Analyze</button>
+      </div>
+      <div class="result-label">
+        <label id="result-label"></label>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/vendor/load-image-2.25.0.all.min.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
