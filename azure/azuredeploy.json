@@ -37,20 +37,7 @@
       }
     }
   },
-  "variables": {
-    "linuxFxVersion": {
-      "value": "Python|3.7"
-    },
-    "workerSize": {
-      "value": "0"
-    },
-    "workerSizeId": {
-      "value": "0"
-    },
-    "numberOfWorkers": {
-      "value": "1"
-    }
-  },
+  "variables": {},
   "resources": [
     {
       "name": "[parameters('storageAccountName')]",
@@ -106,7 +93,7 @@
               "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=',listkeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2018-11-01').keys[0].value,';')]"
             }
           ],
-          "linuxFxVersion": "[variables('linuxFxVersion')]"
+          "linuxFxVersion": "Python|3.7"
         },
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('funcName'))]",
         "clientAffinityEnabled": false
