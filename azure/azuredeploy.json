@@ -38,9 +38,6 @@
     }
   },
   "variables": {
-    "largeFileSharesState": {
-      "value": "Disabled"
-    },
     "linuxFxVersion": {
       "value": "Python|3.7"
     },
@@ -63,7 +60,7 @@
       "properties": {
         "accessTier": "Hot",
         "supportsHttpsTrafficOnly": true,
-        "largeFileSharesState": "[variables('largeFileSharesState')]"
+        "largeFileSharesState": "Disabled"
       },
       "sku": {
         "name": "[parameters('storageAccountType')]",
