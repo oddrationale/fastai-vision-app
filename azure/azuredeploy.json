@@ -140,8 +140,8 @@
         "hostingEnvironment": ""
       },
       "sku": {
-        "Tier": "[variables('sku')]",
-        "Name": "[variables('skuCode')]"
+        "Tier": "Dynamic",
+        "Name": "Y1"
       }
     },
     {
