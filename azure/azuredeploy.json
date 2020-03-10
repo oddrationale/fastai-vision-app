@@ -65,7 +65,6 @@
         "supportsHttpsTrafficOnly": true,
         "largeFileSharesState": "[variables('largeFileSharesState')]"
       },
-      "dependsOn": [],
       "sku": {
         "name": "[parameters('storageAccountType')]",
         "tier": "Standard"
@@ -113,25 +112,18 @@
           "linuxFxVersion": "[variables('linuxFxVersion')]"
         },
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('funcName'))]",
-        "hostingEnvironment": "",
         "clientAffinityEnabled": false
       }
     },
     {
-      "apiVersion": "2018-11-01",
+      "apiVersion": "2019-08-01",
       "name": "[parameters('funcName')]",
       "type": "Microsoft.Web/serverfarms",
       "location": "[parameters('location')]",
       "kind": "linux",
       "tags": {},
-      "dependsOn": [],
       "properties": {
-        "name": "[parameters('funcName')]",
-        "workerSize": "[variables('workerSize')]",
-        "workerSizeId": "[variables('workerSizeId')]",
-        "numberOfWorkers": "[variables('numberOfWorkers')]",
-        "reserved": true,
-        "hostingEnvironment": ""
+        "reserved": true
       },
       "sku": {
         "Tier": "Dynamic",
@@ -144,8 +136,10 @@
       "type": "Microsoft.Insights/components",
       "location": "[parameters('location')]",
       "tags": {},
+      "kind": "web",
       "properties": {
         "ApplicationId": "[parameters('funcName')]",
+        "Application_Type": "web",
         "Request_Source": "IbizaWebAppExtensionCreate"
       }
     }
