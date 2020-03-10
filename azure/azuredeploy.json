@@ -11,7 +11,7 @@
     },
     "storageAccountName": {
       "type": "string",
-      "defaultValue": "[concat('webapp-', uniqueString(resourceGroup().id))]",
+      "defaultValue": "[concat('webapp', uniqueString(resourceGroup().id))]",
       "metadata": {
         "description": "Name of the storage account. Also used as the name of the static web site."
       }
@@ -31,7 +31,7 @@
     },
     "funcName": {
       "type": "string",
-      "defaultValue": "[concat('api-', uniqueString(resourceGroup().id))]",
+      "defaultValue": "[concat('api', uniqueString(resourceGroup().id))]",
       "metadata": {
         "description": "Name of the Azure Function."
       }
@@ -43,12 +43,6 @@
     },
     "linuxFxVersion": {
       "value": "Python|3.7"
-    },
-    "sku": {
-      "value": "Dynamic"
-    },
-    "skuCode": {
-      "value": "Y1"
     },
     "workerSize": {
       "value": "0"
