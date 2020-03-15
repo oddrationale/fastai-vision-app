@@ -22,7 +22,7 @@ def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
             status_code=400,
         )
 
-    learn = load_learner(f"{context.function_directory}")
-    result = learn.predict(img)[0]
+    learn = load_learner(context.function_directory)
+    result = str(learn.predict(img)[0])
 
-    return func.HttpResponse(json.dumps({"result": str(result)}))
+    return func.HttpResponse(json.dumps({"result": result}))
